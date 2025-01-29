@@ -22,8 +22,28 @@ public class Multiply {
           System.exit(1);
         }
         System.out.println(argX + " * " + argY + " = " + argX * argY);
-      } else {
-          System.out.println("Exactly 2 arguments should be provided.\n gradle run --args='1 2'");
+
+      } else if(args.length == 1) {
+        int argX = 0;
+        int argY = 0;
+        try {
+          argX = Integer.parseInt(args[0]);
+        } catch (Exception e) {
+          System.out.println("Arguments: " + args[0] + " must be integers.");
+          System.exit(1);
+        }
+        System.out.println(argX + " * " + argY + " = " + argX * argY);
+      }
+
+      else {
+          int argX = 0;
+        int argY = 0;
+        try {
+        } catch (Exception e) {
+          System.out.println("Something weird just happened.");
+          System.exit(1);
+        }
+        System.out.println(argX + " * " + argY + " = " + argX * argY);
       }
     }
 }
