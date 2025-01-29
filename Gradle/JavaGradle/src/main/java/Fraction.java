@@ -18,7 +18,7 @@ public class Fraction {
    }
 
    public void print() {
-    System.out.print(numerator + "/" + denominator );
+      System.out.print(numerator + "/" + denominator );
    }
 
    public void setNumerator (int n ){
@@ -38,14 +38,34 @@ public class Fraction {
    }
 
    public static void main (String args[]) {
+      int num = 1;
+      int nom = 3;
+
+      if(args.length == 1 || args.length == 2) {
+         try {
+            num = Integer.parseInt(args[0]);
+         } catch (Exception e) {
+            System.out.println("Arguments: " + args[0] + " must be an integer.");
+            System.exit(1);
+         }
+      }
+      if(args.length == 2) {
+         try {
+            nom = Integer.parseInt(args[1]);
+         } catch (Exception e) {
+            System.out.println("Arguments: " + args[1] + " must be an integer.");
+            System.exit(1);
+         }
+      }
+
       try {
          // create a new instance
          // Fraction *frac = [[Fraction alloc] init];
          Fraction frac = new Fraction();
 
          // set the values
-         frac.setNumerator(1);
-         frac.setDenominator(3);
+         frac.setNumerator(num);
+         frac.setDenominator(nom);
 
          // print it
          System.out.print("The fraction is: ");
